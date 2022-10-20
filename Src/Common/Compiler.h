@@ -2,23 +2,33 @@
 
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
- *         File:  InterruptCtrl.h
- *       Module:  InterruptCtrl
+ *         File:  Compiler.h
+ *       Module:  -
  *
- *  Description:  header file for InterruptCtrl Module    
+ *  Description:  Contains Compiler Dependent MACRO Definition     
  *  
  *********************************************************************************************************************/
-#ifndef InterruptCtrl_H
-#define InterruptCtrl_H
+#ifndef COMPILER_H
+#define COMPILER_H
 
 /**********************************************************************************************************************
  * INCLUDES
  *********************************************************************************************************************/
 
+
 /**********************************************************************************************************************
  *  GLOBAL CONSTANT MACROS
  *********************************************************************************************************************/
+/* NULL_PTR define with a void pointer to zero definition*/
+#define NULL_PTR       ((void *)0)
 
+/* INLINE  define for abstraction of the keyword inline*/
+#define INLINE         inline
+
+/* LOCAL_INLINE define for abstraction of the keyword inline in functions with "static" scope.
+   Different compilers may require a different sequence of the keywords "static" and "inline" 
+   if this is supported at all. */
+#define LOCAL_INLINE   static inline
 
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION MACROS
@@ -38,22 +48,10 @@
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION PROTOTYPES
  *********************************************************************************************************************/
+
  
-/******************************************************************************
-* \Syntax          : void IntCtrl_Init(void)                                      
-* \Description     : initialize Nvic\SCB Module by parsing the Configuration 
-*                    into Nvic\SCB registers                                    
-*                                                                             
-* \Sync\Async      : Synchronous                                               
-* \Reentrancy      : Non Reentrant                                             
-* \Parameters (in) : None                     
-* \Parameters (out): None                                                      
-* \Return value:   : None
-*******************************************************************************/
-void IntCtrl_Init(void);
- 
-#endif  /* InterruptCtrl_H */
+#endif  /* COMPILER_H */
 
 /**********************************************************************************************************************
- *  END OF FILE: InterruptCtrl.h
+ *  END OF FILE: Std_Types.h
  *********************************************************************************************************************/
